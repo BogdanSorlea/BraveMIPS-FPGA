@@ -60,11 +60,8 @@ begin
 		if ( rising_edge(clk) ) then
 			if ( we = '1' ) then
 				MRAM(conv_integer(addr)) <= wrData;
-				rdData <= wrData;										--
-			else															--
-				rdData <= MRAM(conv_integer(addr));				--
 			end if;
-			--rdData <= MRAM(conv_integer(addr));
+			rdData <= MRAM(conv_integer(addr));			-- shouldn't worry about simultaneous RD/WR
 		end if;
 		
 	end process;

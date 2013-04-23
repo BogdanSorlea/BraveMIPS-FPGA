@@ -32,11 +32,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity InstructionFetch is
 
 	generic(
-		INSTR_BYTE_SIZE : natural := 2;	-- size of instruction, in bytes
-		INSTR_BYTE_SEL : natural := 1; 	-- size of selection vector for bytes inside instruction 
-													-- 		(equal to log INSTR_BYTE_SIZE)
-		MEMORY_SIZE : natural := 16; 		-- size of the memory, in "lines"
-		MEMORY_SEL : natural := 4			-- size of the selection vector for lines in the memory 
+		DATAPATH : natural := 32;			-- size of datapath
+		MEMORY_SIZE : natural := 32; 		-- size of the memory, in "lines"
+		MEMORY_SEL : natural := 5			-- size of the selection vector for lines in the memory 
 													--			(equal to log MEMORY_SIZE)
 	);
 
@@ -54,7 +52,7 @@ end InstructionFetch;
 
 architecture Behavioral of InstructionFetch is
 
-	type instruction_ram is array(0 to 15) of std_logic_vector(15 downto 0);
+	type instruction_ram is array(0 to MEMORYSIZE - 1) of std_logic_vector(DATAPATH - 1 downto 0);
 	constant IRAM : ram := (others => (others => '0'));
 	
 	signal nextPC : std_logic_vector(15 downto 0);
