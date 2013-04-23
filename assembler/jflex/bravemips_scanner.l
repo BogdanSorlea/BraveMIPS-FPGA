@@ -16,9 +16,15 @@ import java_cup.runtime.*;
     return new Symbol(tokenType, yychar, yychar + yytext().length(), 
                     yytext());
   }
+  public Symbol tokenLine (int tokenType) {
+    System.err.println("Obtain token " + sym.terminal_name(tokenType)
+            + " \"" + yytext() + "\"");
+    return new Symbol(tokenType, yyline, yycolumn, yytext());
+  }
 %}
 
-ident = [A-Za-z][A-za-z0-9]*
+ident = [A-Za-z][A-Za-z0-9]*
+label = [A-za-z][A-Za-z0-9]*[\ \t]*:
 space = [\ \t]
 newline = \r|\n|\r\n
 comment = #.*
@@ -26,8 +32,6 @@ register = \$[rR]0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20|21|22|23|2
 hex = \b0[xX][0-9a-fA-F]+\b
 binary = \b0[bB][01]+\b
 decimal = \b\d+\b
-comma = ,
-column = :
 
 %%
 
@@ -43,8 +47,8 @@ column = :
 {hex}       { return token(sym.HEX); }
 {binary}    { return token(sym.BINARY); }
 {ident}     { return token(sym.IDENTIFIER); }
+{label}     { return tokenLine(sym.LABEL); }
 {register}  { return token(sym.REGISTER); }
-{comma}     { return token(sym.COMMA); }
-{column}    { return token(sym.COLUMN); }
+
 .           { return token(sym.error); }
 <<EOF>>     { return token(sym.EOF); }
