@@ -137,7 +137,7 @@ architecture Behavioral of mips is
 	
 	----------- "TEMPORARY" SIGNALS (FF) -----------
 	
-	signal instruction, operatorSource, operatorTarget : std_logic_vector(DATAPATH - 1 downto 0);
+	signal instruction, operatorSource, operatorTarget, regfileWBValue : std_logic_vector(DATAPATH - 1 downto 0);
 	signal shiftResult, lessThanResult : std_logic_vector(DATAPATH - 1 downto 0);
 	signal jumpOrBranchPC, PC, PC_in : std_logic_vector(DATAPATH - 1 downto 0);
 	
@@ -196,14 +196,31 @@ begin
 		
 			if ( MEMWB.REGFILE_WE = '1' ) then
 				if ( MEMWB.WBSelectALU = '1' ) then
-					REGFILE(conv_integer(MEMWB.destinationRegAddress)) <= MEMWB.ALUresult;
+					regfileWBValue <= MEMWB.ALUresult;
 				else
-					REGFILE(conv_integer(MEMWB.destinationRegAddress)) <= MEMWB.MEMresult;
+					regfileWBValue <= MEMWB.MEMresult;
 				end if;
+				
+				REGFILE(conv_integer(MEMWB.destinationRegAddress)) <= regfileWBValue;
 			end if;
 		
-			IDEX.sourceValue <= REGFILE(conv_integer( IFID.instruction(F_RS_LEFT downto F_RS_RIGHT) ));
-			IDEX.targetValue <= REGFILE(conv_integer( IFID.instruction(F_RT_LEFT downto F_RT_RIGHT) ));
+			if ( conv_integer( IFID.instruction(F_RS_LEFT downto F_RS_RIGHT)) = 0 ) then
+				IDEX.sourceValue <= (others => '0');
+			elsif (conv_integer(MEMWB.destinationRegAddress)
+						= conv_integer( IFID.instruction(F_RS_LEFT downto F_RS_RIGHT))) then
+				IDEX.sourceValue <= regfileWBValue;
+			else
+				IDEX.sourceValue <= REGFILE(conv_integer( IFID.instruction(F_RS_LEFT downto F_RS_RIGHT)));
+			end if;
+			
+			if ( conv_integer( IFID.instruction(F_RT_LEFT downto F_RT_RIGHT)) = 0 ) then
+				IDEX.targetValue <= (others => '0');
+			elsif (conv_integer(MEMWB.destinationRegAddress)
+						= conv_integer( IFID.instruction(F_RT_LEFT downto F_RT_RIGHT))) then
+				IDEX.targetValue <= regfileWBValue;
+			else
+				IDEX.targetValue <= REGFILE(conv_integer( IFID.instruction(F_RT_LEFT downto F_RT_RIGHT)));
+			end if;
 			
 			IDEX.immediateValue(15 downto 0) <= IFID.instruction(F_IMMEDIATE_LEFT downto F_IMMEDIATE_RIGHT);
 			IDEX.immediateValue(31 downto 16) <= (others => IFID.instruction(F_IMMEDIATE_LEFT) and signExtend);
