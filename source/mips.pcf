@@ -1,0 +1,9 @@
+//! **************************************************************************
+// Written by: Map P.49d on Thu Apr 25 03:32:45 2013
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "L15" LEVEL 1;
+COMP "reset" LOCATE = SITE "T15" LEVEL 1;
+SCHEMATIC END;
+

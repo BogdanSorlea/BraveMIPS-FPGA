@@ -66,7 +66,8 @@ entity mips is
 	);
 	
 	port(
-		clk, reset : in std_logic
+		clk, reset : in std_logic;
+		led : out std_logic
 	);
 
 end mips;
@@ -208,6 +209,15 @@ architecture Behavioral of mips is
 	---------------------------------------
 
 begin
+
+	-- TODO: remove this line at some point (kept here just to have some output)
+	led <= REGFILE(0)(0) or REGFILE(1)(0) or REGFILE(2)(0) or REGFILE(3)(0) or REGFILE(4)(0) or REGFILE(5)(0)
+				or REGFILE(6)(0) or REGFILE(7)(0) or REGFILE(8)(0) or REGFILE(9)(0) or REGFILE(10)(0) 
+				or REGFILE(11)(0) or REGFILE(12)(0) or REGFILE(13)(0) or REGFILE(14)(0) or REGFILE(15)(0)
+				or REGFILE(16)(0) or REGFILE(17)(0) or REGFILE(18)(0) or REGFILE(19)(0) or REGFILE(20)(0)
+				or REGFILE(21)(0) or REGFILE(22)(0) or REGFILE(23)(0) or REGFILE(24)(0) or REGFILE(25)(0)
+				or REGFILE(26)(0) or REGFILE(27)(0) or REGFILE(28)(0) or REGFILE(29)(0) or REGFILE(30)(0)
+				or REGFILE(31)(0); 
 
 	---------- INSTRUCTION FETCH ----------
 	PC_in <= EXMEM.ALUresult when 

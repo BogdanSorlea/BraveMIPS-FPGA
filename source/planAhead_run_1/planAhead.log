@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# PlanAhead v14.4 (64-bit)
+# Build 222254 by xbuild on Tue Dec 18 05:21:09 MST 2012
+# Start of session at: Thu Apr 25 03:29:44 2013
+# Process ID: 6184
+# Log file: D:/Study/DTU/1/02211/BraveMIPS/source/planAhead_run_1/planAhead.log
+# Journal file: D:/Study/DTU/1/02211/BraveMIPS/source/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Common 17-86] Your PlanAhead license expires in 7 day(s)
+INFO: [Device 21-36] Loading parts and site information from E:/Xilinx/14.4/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [E:/Xilinx/14.4/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [E:/Xilinx/14.4/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source D:/Study/DTU/1/02211/BraveMIPS/source/pa.fromNetlist.tcl
+# create_project -name BraveMIPS -dir "D:/Study/DTU/1/02211/BraveMIPS/source/planAhead_run_1" -part xc6slx45csg324-3
