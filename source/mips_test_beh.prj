@@ -1,0 +1,2 @@
+vhdl work "mips.vhd"
+vhdl work "mips_test.vhd"

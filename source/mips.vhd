@@ -125,8 +125,58 @@ architecture Behavioral of mips is
 		end record;
 	
 	------------------------------------------------
-
-	constant INMEM : inmem_ram := (others => (others => '0'));
+	
+	---------- OPCODE (MNEMONIC) CONSTANTS ---------
+	
+	constant MN_ADDI : std_logic_vector(5 downto 0) := "001000";
+	
+	-------------- FUNCTION CONSTANTS --------------
+	
+	
+	
+	-------------- REGISTER CONSTANTS --------------
+	
+	constant RG_0 : std_logic_vector(4 downto 0) := conv_std_logic_vector(0, 5);
+	constant RG_1 : std_logic_vector(4 downto 0) := conv_std_logic_vector(1, 5);
+	constant RG_2 : std_logic_vector(4 downto 0) := conv_std_logic_vector(2, 5);
+	constant RG_3 : std_logic_vector(4 downto 0) := conv_std_logic_vector(3, 5);
+	constant RG_4 : std_logic_vector(4 downto 0) := conv_std_logic_vector(4, 5);
+	constant RG_5 : std_logic_vector(4 downto 0) := conv_std_logic_vector(5, 5);
+	constant RG_6 : std_logic_vector(4 downto 0) := conv_std_logic_vector(6, 5);
+	constant RG_7 : std_logic_vector(4 downto 0) := conv_std_logic_vector(7, 5);
+	constant RG_8 : std_logic_vector(4 downto 0) := conv_std_logic_vector(8, 5);
+	constant RG_9 : std_logic_vector(4 downto 0) := conv_std_logic_vector(9, 5);
+	constant RG_10 : std_logic_vector(4 downto 0) := conv_std_logic_vector(10, 5);
+	constant RG_11 : std_logic_vector(4 downto 0) := conv_std_logic_vector(11, 5);
+	constant RG_12 : std_logic_vector(4 downto 0) := conv_std_logic_vector(12, 5);
+	constant RG_13 : std_logic_vector(4 downto 0) := conv_std_logic_vector(13, 5);
+	constant RG_14 : std_logic_vector(4 downto 0) := conv_std_logic_vector(14, 5);
+	constant RG_15 : std_logic_vector(4 downto 0) := conv_std_logic_vector(15, 5);
+	constant RG_16 : std_logic_vector(4 downto 0) := conv_std_logic_vector(16, 5);
+	constant RG_17 : std_logic_vector(4 downto 0) := conv_std_logic_vector(17, 5);
+	constant RG_18 : std_logic_vector(4 downto 0) := conv_std_logic_vector(18, 5);
+	constant RG_19 : std_logic_vector(4 downto 0) := conv_std_logic_vector(19, 5);
+	constant RG_20 : std_logic_vector(4 downto 0) := conv_std_logic_vector(20, 5);
+	constant RG_21 : std_logic_vector(4 downto 0) := conv_std_logic_vector(21, 5);
+	constant RG_22 : std_logic_vector(4 downto 0) := conv_std_logic_vector(22, 5);
+	constant RG_23 : std_logic_vector(4 downto 0) := conv_std_logic_vector(23, 5);
+	constant RG_24 : std_logic_vector(4 downto 0) := conv_std_logic_vector(24, 5);
+	constant RG_25 : std_logic_vector(4 downto 0) := conv_std_logic_vector(25, 5);
+	constant RG_26 : std_logic_vector(4 downto 0) := conv_std_logic_vector(26, 5);
+	constant RG_27 : std_logic_vector(4 downto 0) := conv_std_logic_vector(27, 5);
+	constant RG_28 : std_logic_vector(4 downto 0) := conv_std_logic_vector(28, 5);
+	constant RG_29 : std_logic_vector(4 downto 0) := conv_std_logic_vector(29, 5);
+	constant RG_30 : std_logic_vector(4 downto 0) := conv_std_logic_vector(30, 5);
+	constant RG_31 : std_logic_vector(4 downto 0) := conv_std_logic_vector(31, 5);
+	
+	------------------------------------------------
+	
+	--"" & "" & "" & "", -- I instruction... opcode | rs | rt | imm
+	constant INMEM : inmem_ram := (
+		1 => (others => '0'),
+		2 => MN_ADDI & RG_0 & RG_5 & conv_std_logic_vector(13, 16), -- I instruction... opcode | rs | rt | imm
+		others => (others => '0')
+	);
 	signal REGFILE : regfile_ram;
 	signal MEMORY : memory_ram;
 	
@@ -139,7 +189,8 @@ architecture Behavioral of mips is
 	
 	signal instruction, operatorSource, operatorTarget, regfileWBValue : std_logic_vector(DATAPATH - 1 downto 0);
 	signal shiftResult, lessThanResult : std_logic_vector(DATAPATH - 1 downto 0);
-	signal jumpOrBranchPC, PC, PC_in : std_logic_vector(DATAPATH - 1 downto 0);
+	signal jumpOrBranchPC, PC_in : std_logic_vector(DATAPATH - 1 downto 0);
+	signal PC : std_logic_vector(DATAPATH-1 downto 0) := (others => '0');
 	
 	------------------------------------------------
 	
