@@ -300,17 +300,13 @@ architecture Behavioral of mips is
 	
 	---------------------------------------
 
-	signal tmp : std_logic_vector(31 downto 0);
-
 begin
 
-	tmp <= not IFID.instruction;
-
 	-- TODO: remove this at some point (kept here just to have some output)
-	led <= tmp(7 downto 0) when sw = "00" else
-				tmp(15 downto 8) when sw = "01" else
-				tmp(23 downto 16) when sw = "10" else
-				tmp(31 downto 24); 
+	led <= IFID.instruction(7 downto 0) when sw = "00" else
+				IFID.instruction(15 downto 8) when sw = "01" else
+				IFID.instruction(23 downto 16) when sw = "10" else
+				IFID.instruction(31 downto 24); 
 
 	---------- INSTRUCTION FETCH ----------
 	PC_in <= EXMEM.ALUresult when 
@@ -322,7 +318,7 @@ begin
 	SEQ_IF: process(clk, reset)
 	begin
 	
-		if (reset = '1') then
+		if (reset = '0') then
 			PC <= (others => '0');
 			
 			IFID.instruction <= (others => '0');
@@ -348,7 +344,7 @@ begin
 	
 		--REGFILE <= (others => (others => '0'));
 	
-		if (reset = '1') then
+		if (reset = '0') then
 			IDEX.next_seq_PC <= (others => '0');
 		elsif ( rising_edge(clk) ) then
 		
@@ -629,7 +625,7 @@ begin
 	SEQ_EX: process(clk, reset)
 	begin
 	
-		if (reset = '1') then
+		if (reset = '0') then
 			EXMEM.next_seq_PC <= (others => '0');
 		elsif ( rising_edge(clk) ) then
 		
