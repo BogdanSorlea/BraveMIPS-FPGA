@@ -108,7 +108,7 @@ architecture Behavioral of mips is
 			ALUresult : std_logic_vector(DATAPATH - 1 downto 0);
 			destinationRegAddress : std_logic_vector(F_RD_LEFT - F_RD_RIGHT downto 0);
 			next_seq_PC : std_logic_vector(DATAPATH - 1 downto 0);
-			MEMORY_addr : std_logic_vector(DATAPATH - 1 downto 0);
+			targetValue : std_logic_vector(DATAPATH - 1 downto 0);
 			MEMORY_WE : std_logic;
 			differenceIsZero : std_logic;
 			WBSelectALU : std_logic;
@@ -127,13 +127,32 @@ architecture Behavioral of mips is
 	
 	------------------------------------------------
 	
+	constant SH_NIL : std_logic_vector(4 downto 0) := "-----";
+	constant RG_NIL : std_logic_vector(4 downto 0) := "-----";
+	
 	---------- OPCODE (MNEMONIC) CONSTANTS ---------
 	
+	constant MN_ZERO : std_logic_vector(5 downto 0) := "000000";
 	constant MN_ADDI : std_logic_vector(5 downto 0) := "001000";
+	constant MN_LW : std_logic_vector(5 downto 0) := "100011";
+	constant MN_SW : std_logic_vector(5 downto 0) := "101011";
+	constant MN_ANDI : std_logic_vector(5 downto 0) := "001100";
+	constant MN_ORI : std_logic_vector(5 downto 0) := "001101";
+	constant MN_SLTI : std_logic_vector(5 downto 0) := "001010";
+	constant MN_BEQ : std_logic_vector(5 downto 0) := "000100";
+	constant MN_BNEQ : std_logic_vector(5 downto 0) := "000101";
 	
 	-------------- FUNCTION CONSTANTS --------------
 	
-	
+	constant FN_ADD : std_logic_vector(5 downto 0) := "100000";
+	constant FN_SUB : std_logic_vector(5 downto 0) := "100010";
+	constant FN_AND : std_logic_vector(5 downto 0) := "100100";
+	constant FN_OR : std_logic_vector(5 downto 0) := "100101";
+	constant FN_XOR : std_logic_vector(5 downto 0) := "100110";
+	constant FN_NOR : std_logic_vector(5 downto 0) := "100111";
+	constant FN_SLT : std_logic_vector(5 downto 0) := "101010";
+	constant FN_SLL : std_logic_vector(5 downto 0) := "000000";
+	constant FN_SRL : std_logic_vector(5 downto 0) := "000010";
 	
 	-------------- REGISTER CONSTANTS --------------
 	
@@ -174,12 +193,84 @@ architecture Behavioral of mips is
 	
 	--"" & "" & "" & "", -- I instruction... opcode | rs | rt | imm
 	constant INMEM : inmem_ram := (
-		1 => (others => '0'),
-		2 => MN_ADDI & RG_0 & RG_5 & conv_std_logic_vector(13, 16), -- I instruction... opcode | rs | rt | imm
+		(others => '0'),														-- nop
+		MN_ADDI & RG_0 & RG_5 & conv_std_logic_vector(13, 16), 	-- I instr... opcode | rs | rt | imm
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		MN_ZERO & RG_5 & RG_5 & RG_6 & SH_NIL & FN_ADD,				-- R instr... opcode = 0 | rs | rt | rd | sh | funct
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		MN_ADDI & RG_0 & RG_5 & conv_std_logic_vector(3, 16),		-- I
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		MN_ZERO & RG_6 & RG_5 & RG_6 & SH_NIL & FN_SUB,				-- R
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		MN_SW & RG_0 & RG_5 & conv_std_logic_vector(2, 16),		-- I
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		MN_LW & RG_0 & RG_7 & conv_std_logic_vector(2, 16),		-- I
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		MN_ADDI & RG_0 & RG_4 & conv_std_logic_vector(6, 16),		-- I
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		MN_ZERO & RG_4 & RG_5 & RG_5 & SH_NIL & FN_AND,				-- R
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		MN_ANDI & RG_4 & RG_3 & conv_std_logic_vector(15, 16),	-- I
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		MN_ZERO & RG_7 & RG_3 & RG_3 & SH_NIL & FN_OR,				-- R
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		MN_ORI & RG_5 & RG_5 & conv_std_logic_vector(8, 16),		-- I
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		MN_ZERO & RG_5 & RG_7 & RG_7 & SH_NIL & FN_XOR,				-- R
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		MN_ADDI & RG_0 & RG_1 & "1111111111110000",					-- I
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		MN_ZERO & RG_7 & RG_1 & RG_1 & SH_NIL & FN_NOR,				-- R
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		MN_ZERO & RG_7 & RG_1 & RG_1 & SH_NIL & FN_SLT,				-- R
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		MN_SLTI & RG_7 & RG_3 & conv_std_logic_vector(0, 16),		-- I
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		MN_ZERO & RG_NIL & RG_1 & RG_1 & "00010" & FN_SLL,			-- R
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		MN_ZERO & RG_NIL & RG_7 & RG_7 & "00010" & FN_SRL,			-- R
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		MN_BEQ & RG_0 & RG_3 & conv_std_logic_vector(5, 16),		-- I
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		MN_ADDI & RG_0 & RG_2 & conv_std_logic_vector(3, 16),		-- I
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		MN_BNEQ & RG_7 & RG_2 & conv_std_logic_vector(1, 16),		-- I
+		MN_ADDI & RG_7 & RG_7 & conv_std_logic_vector(2, 16),		-- I
+		MN_ADDI & RG_7 & RG_7 & conv_std_logic_vector(14, 16),	-- I
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		(others => '0'),														-- nop
+		(others => '1'),														-- nop
 		others => (others => '0')
 	);
-	signal REGFILE : regfile_ram;
-	signal MEMORY : memory_ram;
+	signal REGFILE : regfile_ram := (others => (others => '0'));
+	signal MEMORY : memory_ram := (others => (others => '0'));
 	
 	signal IFID : IF_ID_REG;
 	signal IDEX : ID_EX_REG;
@@ -189,7 +280,7 @@ architecture Behavioral of mips is
 	----------- "TEMPORARY" SIGNALS (FF) -----------
 	
 	signal instruction, operatorSource, operatorTarget, regfileWBValue : std_logic_vector(DATAPATH - 1 downto 0);
-	signal shiftResult, lessThanResult : std_logic_vector(DATAPATH - 1 downto 0);
+	signal shiftResult, shiftResultL, shiftResultR, lessThanResult : std_logic_vector(DATAPATH - 1 downto 0);
 	signal jumpOrBranchPC, PC_in : std_logic_vector(DATAPATH - 1 downto 0);
 	signal PC : std_logic_vector(DATAPATH-1 downto 0) := (others => '0');
 	
@@ -248,20 +339,18 @@ begin
 	
 	--------- INSTRUCTION DECODE ----------
 	
+	regfileWBValue <= MEMWB.ALUresult when MEMWB.WBSelectALU = '1' else MEMWB.MEMresult;
+	
 	SEQ_ID: process(clk, reset, signExtend)
 	begin
+	
+		--REGFILE <= (others => (others => '0'));
 	
 		if (reset = '1') then
 			IDEX.next_seq_PC <= (others => '0');
 		elsif ( rising_edge(clk) ) then
 		
-			if ( MEMWB.REGFILE_WE = '1' ) then
-				if ( MEMWB.WBSelectALU = '1' ) then
-					regfileWBValue <= MEMWB.ALUresult;
-				else
-					regfileWBValue <= MEMWB.MEMresult;
-				end if;
-				
+			if ( MEMWB.REGFILE_WE = '1' ) then		
 				REGFILE(conv_integer(MEMWB.destinationRegAddress)) <= regfileWBValue;
 			end if;
 		
@@ -330,7 +419,7 @@ begin
 			end case;
 		else	-- I or J type instruction
 			case conv_integer(IFID.instruction(F_OPCODE_LEFT downto F_OPCODE_RIGHT)) is
-				when 8 | 23 | 43 | 4 | 5 | 2 => controlReg(5 downto 0) <= "000000";			-- +
+				when 8 | 23 | 43 | 4 | 5 | 2 | 35 => controlReg(5 downto 0) <= "000000";	-- +
 				when 12 => controlReg(5 downto 0) <= "000100";										-- and
 				when 13 => controlReg(5 downto 0) <= "000101";										-- or
 				when 10 => controlReg(5 downto 0) <= "001000";										-- lt
@@ -360,7 +449,7 @@ begin
 			end case;
 		else	-- I or J type instruction
 			case conv_integer(IFID.instruction(F_OPCODE_LEFT downto F_OPCODE_RIGHT)) is
-				when 8 | 23 | 0 | 12 | 13 | 10 => controlReg(8) <= '1';				-- allow write
+				when 8 | 23 | 0 | 12 | 13 | 10 | 35 => controlReg(8) <= '1';		-- allow write
 				when others => controlReg(8) <= '0';										-- disallow write
 			end case;
 		end if;
@@ -410,14 +499,14 @@ begin
 		
 		-- set-up for isTargetImmediate
 		case conv_integer(IFID.instruction(F_OPCODE_LEFT downto F_OPCODE_RIGHT)) is		-- I & J instructions
-			when 8 | 12 | 13 | 10 | 4 | 5 | 2 => controlReg(14) <= '1';			-- is Immediate
-			when others => controlReg(14) <= '0';										-- is Target register
+			when 8 | 12 | 13 | 10 | 4 | 5 | 2 | 35 | 43 => controlReg(14) <= '1';			-- is Immediate
+			when others => controlReg(14) <= '0';														-- is Target register
 		end case;
 		
 		-- set-up for isDestinationTarget (destination refers to REGFILE, during WB)
 		case conv_integer(IFID.instruction(F_OPCODE_LEFT downto F_OPCODE_RIGHT)) is		-- I & J instructions
-			when 8 | 23 | 12 | 13 | 10 => controlReg(15) <= '1';			-- address is Target register value
-			when others => controlReg(15) <= '0';								-- address is Destination register value
+			when 8 | 23 | 12 | 13 | 10 | 35 => controlReg(15) <= '1';			-- address is Target register value
+			when others => controlReg(15) <= '0';										-- address is Destination register value
 		end case;
 		
 	end process;
@@ -450,6 +539,7 @@ begin
 	
 	--shiftResult <= operatorSource * 2**conv_integer(operatorTarget(10 downto 6));
 	--shiftResult <= operatorSource * 2**conv_integer(operatorTarget(10 downto 6));
+	-- this doesn't seem to work - at least in simulation (nor the long listed version :|)
 	shiftResult <= operatorSource(DATAPATH - 1 - conv_integer(operatorTarget(10 downto 6)) downto 0) 
 							& zeroArray(conv_integer(operatorTarget(10 downto 6)) - 1 downto 0)
 							when (IDEX.ALUoperation(3 downto 0) = "1001") else
@@ -457,6 +547,78 @@ begin
 							& operatorSource(DATAPATH - 1 downto conv_integer(operatorTarget(10 downto 6))) 
 							when (IDEX.ALUoperation(3 downto 0) = "1010") else
 						(others => '0');
+
+--	shiftResultL <= 	operatorSource(DATAPATH - 1 downto 0) 
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 0 else
+--							operatorSource(DATAPATH - 2 downto 0) & "0"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 1 else
+--							operatorSource(DATAPATH - 3 downto 0) & "00"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 2 else
+--							operatorSource(DATAPATH - 4 downto 0) & "000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 3 else
+--							operatorSource(DATAPATH - 5 downto 0) & "0000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 4 else
+--							operatorSource(DATAPATH - 6 downto 0) & "00000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 5 else
+--							operatorSource(DATAPATH - 7 downto 0) & "000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 6 else
+--							operatorSource(DATAPATH - 8 downto 0) & "0000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 7 else
+--							operatorSource(DATAPATH - 9 downto 0) & "00000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 8 else
+--							operatorSource(DATAPATH - 10 downto 0) & "000000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 9 else
+--							operatorSource(DATAPATH - 11 downto 0) & "0000000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 10 else
+--							operatorSource(DATAPATH - 12 downto 0) & "00000000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 11 else
+--							operatorSource(DATAPATH - 13 downto 0) & "000000000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 12 else
+--							operatorSource(DATAPATH - 14 downto 0) & "0000000000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 13 else
+--							operatorSource(DATAPATH - 15 downto 0) & "00000000000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 14 else
+--							operatorSource(DATAPATH - 16 downto 0) & "000000000000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 15 else
+--							operatorSource(DATAPATH - 17 downto 0) & "0000000000000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 16 else
+--							operatorSource(DATAPATH - 18 downto 0) & "00000000000000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 17 else
+--							operatorSource(DATAPATH - 19 downto 0) & "000000000000000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 18 else
+--							operatorSource(DATAPATH - 20 downto 0) & "0000000000000000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 19 else
+--							operatorSource(DATAPATH - 21 downto 0) & "00000000000000000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 20 else
+--							operatorSource(DATAPATH - 22 downto 0) & "000000000000000000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 21 else
+--							operatorSource(DATAPATH - 23 downto 0) & "0000000000000000000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 22 else
+--							operatorSource(DATAPATH - 24 downto 0) & "00000000000000000000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 23 else
+--							operatorSource(DATAPATH - 25 downto 0) & "000000000000000000000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 24 else
+--							operatorSource(DATAPATH - 26 downto 0) & "0000000000000000000000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 25 else
+--							operatorSource(DATAPATH - 27 downto 0) & "00000000000000000000000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 26 else
+--							operatorSource(DATAPATH - 28 downto 0) & "000000000000000000000000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 27 else
+--							operatorSource(DATAPATH - 29 downto 0) & "0000000000000000000000000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 28 else
+--							operatorSource(DATAPATH - 30 downto 0) & "00000000000000000000000000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 29 else
+--							operatorSource(DATAPATH - 31 downto 0) & "000000000000000000000000000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 30 else
+--							operatorSource(DATAPATH - 32 downto 0) & "0000000000000000000000000000000"
+--								when conv_integer(operatorTarget(F_SHAMT_LEFT - F_SHAMT_RIGHT)) = 31 else
+--							(others => '0');
+--							
+--	shiftResultR <= (others => '0');				 
+--
+--	shiftResult <= shiftResultL when (IDEX.ALUoperation(3 downto 0) = "1001") else
+--						shiftResultR when (IDEX.ALUoperation(3 downto 0) = "1010") else
+--						(others => '0');
 	
 	lessThanResult <= zeroArray(DATAPATH - 2 downto 0) & "1" 
 								when (operatorSource < operatorTarget) else 
@@ -483,7 +645,7 @@ begin
 				when others => EXMEM.ALUresult <= operatorSource;
 			end case;
 		
-			EXMEM.MEMORY_addr <= IDEX.targetValue;
+			EXMEM.targetValue <= IDEX.targetValue;
 			EXMEM.MEMORY_WE <= IDEX.MEMORY_WE;
 			EXMEM.destinationRegAddress <= IDEX.destinationRegAddress;
 			EXMEM.WBSelectALU <= IDEX.WBSelectALU;
@@ -513,10 +675,10 @@ begin
 		if ( rising_edge(clk) ) then
 										
 			if ( EXMEM.MEMORY_WE = '1' ) then
-				MEMORY(conv_integer(EXMEM.MEMORY_addr)) <= EXMEM.ALUresult;
-				MEMWB.MEMresult <= EXMEM.ALUresult;
+				MEMORY(conv_integer(EXMEM.ALUresult(MEMORY_SEL - 1 downto 0))) <= EXMEM.targetValue;
+				MEMWB.MEMresult <= EXMEM.targetValue;
 			else
-				MEMWB.MEMresult <= MEMORY(conv_integer(EXMEM.MEMORY_addr));
+				MEMWB.MEMresult <= MEMORY(conv_integer(EXMEM.ALUresult(MEMORY_SEL - 1 downto 0)));
 			end if;
 			
 			MEMWB.ALUresult <= EXMEM.ALUresult;

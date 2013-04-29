@@ -14,8 +14,8 @@ Compiling package std_logic_unsigned
 Compiling architecture behavioral of entity mips [\mips(32,256,8,32,5,64,6,31,26,2...]
 Compiling architecture behavior of entity mips_test
 Time Resolution for simulation is 1ps.
-Waiting for 2 sub-compilation(s) to finish...
+Waiting for 4 sub-compilation(s) to finish...
 Compiled 7 VHDL Units
 Built simulation executable D:/Study/DTU/1/02211/BraveMIPS/source/mips_test_isim_beh.exe
-Fuse Memory Usage: 32768 KB
-Fuse CPU Usage: 920 ms
+Fuse Memory Usage: 33004 KB
+Fuse CPU Usage: 998 ms

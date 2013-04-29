@@ -12,7 +12,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="8" />
+   <WVObjectSize size="29" />
    <wvobject fp_name="/mips_test/clk" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -33,15 +33,114 @@
       <obj_property name="ElementShortName">clk_period</obj_property>
       <obj_property name="ObjectShortName">clk_period</obj_property>
    </wvobject>
+   <wvobject fp_name="divider123" type="divider">
+      <obj_property name="label">IF</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
    <wvobject fp_name="/mips_test/uut/pc" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">pc[31:0]</obj_property>
       <obj_property name="ObjectShortName">pc[31:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
+   <wvobject fp_name="divider124" type="divider">
+      <obj_property name="label">ID</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
    <wvobject fp_name="/mips_test/uut/ifid.instruction" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">.instruction</obj_property>
       <obj_property name="ObjectShortName">ifid.instruction</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider125" type="divider">
+      <obj_property name="label">EX</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mips_test/uut/idex.regfile_we" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">.regfile_we</obj_property>
+      <obj_property name="ObjectShortName">idex.regfile_we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mips_test/uut/idex.sourcevalue" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">.sourcevalue</obj_property>
+      <obj_property name="ObjectShortName">idex.sourcevalue</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mips_test/uut/idex.targetvalue" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">.targetvalue</obj_property>
+      <obj_property name="ObjectShortName">idex.targetvalue</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mips_test/uut/idex.immediatevalue" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">.immediatevalue</obj_property>
+      <obj_property name="ObjectShortName">idex.immediatevalue</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mips_test/uut/idex.aluoperation" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">.aluoperation</obj_property>
+      <obj_property name="ObjectShortName">idex.aluoperation</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mips_test/uut/shiftresult" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">shiftresult[31:0]</obj_property>
+      <obj_property name="ObjectShortName">shiftresult[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider126" type="divider">
+      <obj_property name="label">MEM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mips_test/uut/exmem.regfile_we" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">.regfile_we</obj_property>
+      <obj_property name="ObjectShortName">exmem.regfile_we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mips_test/uut/exmem.memory_we" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">.memory_we</obj_property>
+      <obj_property name="ObjectShortName">exmem.memory_we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mips_test/uut/exmem.aluresult" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">.aluresult</obj_property>
+      <obj_property name="ObjectShortName">exmem.aluresult</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider127" type="divider">
+      <obj_property name="label">WB</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mips_test/uut/memwb.regfile_we" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">.regfile_we</obj_property>
+      <obj_property name="ObjectShortName">memwb.regfile_we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mips_test/uut/memwb.destinationregaddress" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">.destinationregaddress</obj_property>
+      <obj_property name="ObjectShortName">memwb.destinationregaddress</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mips_test/uut/memwb.memresult" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">.memresult</obj_property>
+      <obj_property name="ObjectShortName">memwb.memresult</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mips_test/uut/memwb.aluresult" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">.aluresult</obj_property>
+      <obj_property name="ObjectShortName">memwb.aluresult</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mips_test/uut/memwb.wbselectalu" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">.wbselectalu</obj_property>
+      <obj_property name="ObjectShortName">memwb.wbselectalu</obj_property>
+   </wvobject>
+   <wvobject fp_name="/mips_test/uut/regfilewbvalue" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">regfilewbvalue[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfilewbvalue[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/mips_test/uut/regfile" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">regfile[0:31]</obj_property>
@@ -115,96 +214,402 @@
       <wvobject fp_name="/mips_test/uut/regfile[13]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[13]</obj_property>
          <obj_property name="ObjectShortName">regfile[13]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/mips_test/uut/regfile[14]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[14]</obj_property>
          <obj_property name="ObjectShortName">regfile[14]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/mips_test/uut/regfile[15]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[15]</obj_property>
          <obj_property name="ObjectShortName">regfile[15]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/mips_test/uut/regfile[16]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[16]</obj_property>
          <obj_property name="ObjectShortName">regfile[16]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/mips_test/uut/regfile[17]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[17]</obj_property>
          <obj_property name="ObjectShortName">regfile[17]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/mips_test/uut/regfile[18]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[18]</obj_property>
          <obj_property name="ObjectShortName">regfile[18]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/mips_test/uut/regfile[19]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[19]</obj_property>
          <obj_property name="ObjectShortName">regfile[19]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/mips_test/uut/regfile[20]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[20]</obj_property>
          <obj_property name="ObjectShortName">regfile[20]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/mips_test/uut/regfile[21]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[21]</obj_property>
          <obj_property name="ObjectShortName">regfile[21]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/mips_test/uut/regfile[22]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[22]</obj_property>
          <obj_property name="ObjectShortName">regfile[22]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/mips_test/uut/regfile[23]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[23]</obj_property>
          <obj_property name="ObjectShortName">regfile[23]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/mips_test/uut/regfile[24]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[24]</obj_property>
          <obj_property name="ObjectShortName">regfile[24]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/mips_test/uut/regfile[25]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[25]</obj_property>
          <obj_property name="ObjectShortName">regfile[25]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/mips_test/uut/regfile[26]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[26]</obj_property>
          <obj_property name="ObjectShortName">regfile[26]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/mips_test/uut/regfile[27]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[27]</obj_property>
          <obj_property name="ObjectShortName">regfile[27]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/mips_test/uut/regfile[28]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[28]</obj_property>
          <obj_property name="ObjectShortName">regfile[28]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/mips_test/uut/regfile[29]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[29]</obj_property>
          <obj_property name="ObjectShortName">regfile[29]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/mips_test/uut/regfile[30]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[30]</obj_property>
          <obj_property name="ObjectShortName">regfile[30]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/mips_test/uut/regfile[31]" type="array" db_ref_id="1">
          <obj_property name="ElementShortName">[31]</obj_property>
          <obj_property name="ObjectShortName">regfile[31]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/mips_test/uut/memory" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">memory[0:63]</obj_property>
+      <obj_property name="ObjectShortName">memory[0:63]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <wvobject fp_name="/mips_test/uut/memory[0]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[0]</obj_property>
+         <obj_property name="ObjectShortName">memory[0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[1]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[1]</obj_property>
+         <obj_property name="ObjectShortName">memory[1]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[2]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[2]</obj_property>
+         <obj_property name="ObjectShortName">memory[2]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[3]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[3]</obj_property>
+         <obj_property name="ObjectShortName">memory[3]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[4]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[4]</obj_property>
+         <obj_property name="ObjectShortName">memory[4]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[5]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[5]</obj_property>
+         <obj_property name="ObjectShortName">memory[5]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[6]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[6]</obj_property>
+         <obj_property name="ObjectShortName">memory[6]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[7]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[7]</obj_property>
+         <obj_property name="ObjectShortName">memory[7]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[8]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[8]</obj_property>
+         <obj_property name="ObjectShortName">memory[8]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[9]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[9]</obj_property>
+         <obj_property name="ObjectShortName">memory[9]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[10]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[10]</obj_property>
+         <obj_property name="ObjectShortName">memory[10]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[11]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[11]</obj_property>
+         <obj_property name="ObjectShortName">memory[11]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[12]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[12]</obj_property>
+         <obj_property name="ObjectShortName">memory[12]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[13]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[13]</obj_property>
+         <obj_property name="ObjectShortName">memory[13]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[14]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[14]</obj_property>
+         <obj_property name="ObjectShortName">memory[14]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[15]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[15]</obj_property>
+         <obj_property name="ObjectShortName">memory[15]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[16]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[16]</obj_property>
+         <obj_property name="ObjectShortName">memory[16]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[17]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[17]</obj_property>
+         <obj_property name="ObjectShortName">memory[17]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[18]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[18]</obj_property>
+         <obj_property name="ObjectShortName">memory[18]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[19]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[19]</obj_property>
+         <obj_property name="ObjectShortName">memory[19]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[20]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[20]</obj_property>
+         <obj_property name="ObjectShortName">memory[20]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[21]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[21]</obj_property>
+         <obj_property name="ObjectShortName">memory[21]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[22]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[22]</obj_property>
+         <obj_property name="ObjectShortName">memory[22]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[23]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[23]</obj_property>
+         <obj_property name="ObjectShortName">memory[23]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[24]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[24]</obj_property>
+         <obj_property name="ObjectShortName">memory[24]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[25]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[25]</obj_property>
+         <obj_property name="ObjectShortName">memory[25]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[26]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[26]</obj_property>
+         <obj_property name="ObjectShortName">memory[26]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[27]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[27]</obj_property>
+         <obj_property name="ObjectShortName">memory[27]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[28]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[28]</obj_property>
+         <obj_property name="ObjectShortName">memory[28]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[29]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[29]</obj_property>
+         <obj_property name="ObjectShortName">memory[29]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[30]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[30]</obj_property>
+         <obj_property name="ObjectShortName">memory[30]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[31]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[31]</obj_property>
+         <obj_property name="ObjectShortName">memory[31]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[32]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[32]</obj_property>
+         <obj_property name="ObjectShortName">memory[32]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[33]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[33]</obj_property>
+         <obj_property name="ObjectShortName">memory[33]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[34]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[34]</obj_property>
+         <obj_property name="ObjectShortName">memory[34]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[35]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[35]</obj_property>
+         <obj_property name="ObjectShortName">memory[35]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[36]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[36]</obj_property>
+         <obj_property name="ObjectShortName">memory[36]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[37]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[37]</obj_property>
+         <obj_property name="ObjectShortName">memory[37]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[38]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[38]</obj_property>
+         <obj_property name="ObjectShortName">memory[38]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[39]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[39]</obj_property>
+         <obj_property name="ObjectShortName">memory[39]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[40]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[40]</obj_property>
+         <obj_property name="ObjectShortName">memory[40]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[41]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[41]</obj_property>
+         <obj_property name="ObjectShortName">memory[41]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[42]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[42]</obj_property>
+         <obj_property name="ObjectShortName">memory[42]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[43]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[43]</obj_property>
+         <obj_property name="ObjectShortName">memory[43]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[44]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[44]</obj_property>
+         <obj_property name="ObjectShortName">memory[44]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[45]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[45]</obj_property>
+         <obj_property name="ObjectShortName">memory[45]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[46]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[46]</obj_property>
+         <obj_property name="ObjectShortName">memory[46]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[47]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[47]</obj_property>
+         <obj_property name="ObjectShortName">memory[47]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[48]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[48]</obj_property>
+         <obj_property name="ObjectShortName">memory[48]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[49]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[49]</obj_property>
+         <obj_property name="ObjectShortName">memory[49]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[50]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[50]</obj_property>
+         <obj_property name="ObjectShortName">memory[50]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[51]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[51]</obj_property>
+         <obj_property name="ObjectShortName">memory[51]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[52]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[52]</obj_property>
+         <obj_property name="ObjectShortName">memory[52]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[53]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[53]</obj_property>
+         <obj_property name="ObjectShortName">memory[53]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[54]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[54]</obj_property>
+         <obj_property name="ObjectShortName">memory[54]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[55]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[55]</obj_property>
+         <obj_property name="ObjectShortName">memory[55]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[56]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[56]</obj_property>
+         <obj_property name="ObjectShortName">memory[56]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[57]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[57]</obj_property>
+         <obj_property name="ObjectShortName">memory[57]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[58]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[58]</obj_property>
+         <obj_property name="ObjectShortName">memory[58]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[59]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[59]</obj_property>
+         <obj_property name="ObjectShortName">memory[59]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[60]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[60]</obj_property>
+         <obj_property name="ObjectShortName">memory[60]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[61]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[61]</obj_property>
+         <obj_property name="ObjectShortName">memory[61]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[62]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[62]</obj_property>
+         <obj_property name="ObjectShortName">memory[62]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/mips_test/uut/memory[63]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[63]</obj_property>
+         <obj_property name="ObjectShortName">memory[63]</obj_property>
          <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
    </wvobject>
