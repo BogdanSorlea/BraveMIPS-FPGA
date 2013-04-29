@@ -300,13 +300,17 @@ architecture Behavioral of mips is
 	
 	---------------------------------------
 
+	signal tmp : std_logic_vector(31 downto 0);
+
 begin
 
+	tmp <= not IFID.instruction;
+
 	-- TODO: remove this at some point (kept here just to have some output)
-	led <= PC(7 downto 0) when sw = "00" else
-				PC(15 downto 8) when sw = "01" else
-				PC(23 downto 16) when sw = "10" else
-				PC(31 downto 24); 
+	led <= tmp(7 downto 0) when sw = "00" else
+				tmp(15 downto 8) when sw = "01" else
+				tmp(23 downto 16) when sw = "10" else
+				tmp(31 downto 24); 
 
 	---------- INSTRUCTION FETCH ----------
 	PC_in <= EXMEM.ALUresult when 

@@ -42,7 +42,9 @@ ARCHITECTURE behavior OF mips_test IS
     COMPONENT mips
     PORT(
          clk : IN  std_logic;
-         reset : IN  std_logic
+         reset : IN  std_logic;
+			sw : IN std_logic_vector(1 downto 0);
+			led : OUT std_logic_vector(7 downto 0)
         );
     END COMPONENT;
     
@@ -50,6 +52,10 @@ ARCHITECTURE behavior OF mips_test IS
    --Inputs
    signal clk : std_logic := '0';
    signal reset : std_logic := '0';
+	signal sw : std_logic_vector(1 downto 0) := "00";
+	
+	--Outputs
+	signal led : std_logic_vector(7 downto 0);
 
    -- Clock period definitions
    constant clk_period : time := 10 ns;
@@ -62,7 +68,9 @@ BEGIN
 	-- Instantiate the Unit Under Test (UUT)
    uut: mips PORT MAP (
           clk => clk,
-          reset => reset
+          reset => reset,
+			 sw => sw,
+			 led => led
         );
 
    -- Clock process definitions
@@ -87,7 +95,7 @@ BEGIN
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
-
+		
       wait for clk_period*10;
 
       -- insert stimulus here 

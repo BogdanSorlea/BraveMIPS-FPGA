@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/BraveMIPS/source/mpg_PC_test.xst" -ofn "D:/Study/DTU/1/02211/BraveMIPS/source/mpg_PC_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc atlys.ucf -p xc6slx45-csg324-3 mpg_PC_test.ngc mpg_PC_test.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mpg_PC_test_map.ncd mpg_PC_test.ngd mpg_PC_test.pcf 
+par -w -intstyle ise -ol high -mt off mpg_PC_test_map.ncd mpg_PC_test.ncd mpg_PC_test.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mpg_PC_test.twx mpg_PC_test.ncd -o mpg_PC_test.twr mpg_PC_test.pcf -ucf atlys.ucf 
+bitgen -intstyle ise -f mpg_PC_test.ut mpg_PC_test.ncd 

@@ -12,6 +12,105 @@ Done.
 Annotating constraints to design from ucf file "atlys.ucf" ...
 Resolving constraint associations...
 Checking Constraint Associations...
+ERROR:ConstraintSystem:59 - Constraint <NET "Led<0>" LOC = "U18";>
+   [atlys.ucf(6)]: NET "Led<0>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "Led<0>" LOC = "U18";> [atlys.ucf(6)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "Led<1>" LOC = "M14";>
+   [atlys.ucf(7)]: NET "Led<1>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "Led<1>" LOC = "M14";> [atlys.ucf(7)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "Led<2>" LOC = "N14";>
+   [atlys.ucf(8)]: NET "Led<2>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "Led<2>" LOC = "N14";> [atlys.ucf(8)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "Led<3>" LOC = "L14";>
+   [atlys.ucf(9)]: NET "Led<3>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "Led<3>" LOC = "L14";> [atlys.ucf(9)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "Led<4>" LOC = "M13";>
+   [atlys.ucf(10)]: NET "Led<4>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "Led<4>" LOC = "M13";> [atlys.ucf(10)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "Led<5>" LOC = "D4";>
+   [atlys.ucf(11)]: NET "Led<5>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "Led<5>" LOC = "D4";> [atlys.ucf(11)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "Led<6>" LOC = "P16";>
+   [atlys.ucf(12)]: NET "Led<6>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "Led<6>" LOC = "P16";> [atlys.ucf(12)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "Led<7>" LOC = "N12";>
+   [atlys.ucf(13)]: NET "Led<7>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "Led<7>" LOC = "N12";> [atlys.ucf(13)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "reset" LOC = "T15";>
+   [atlys.ucf(16)]: NET "reset" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "reset" LOC = "T15";> [atlys.ucf(16)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "sw<0>" LOC = "A10";>
+   [atlys.ucf(26)]: NET "sw<0>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "sw<0>" LOC = "A10";> [atlys.ucf(26)]' could not be found and so the
+   Locate constraint will be removed.
+
+ERROR:ConstraintSystem:59 - Constraint <NET "sw<1>" LOC = "D14";>
+   [atlys.ucf(27)]: NET "sw<1>" not found.  Please verify that:
+   1. The specified design element actually exists in the original design.
+   2. The specified object is spelled correctly in the constraint source file.
+
+WARNING:ConstraintSystem - A target design object for the Locate constraint
+   '<NET "sw<1>" LOC = "D14";> [atlys.ucf(27)]' could not be found and so the
+   Locate constraint will be removed.
+
 Done...
 
 Checking expanded design ...
@@ -24,13 +123,14 @@ Partition Implementation Status
 -------------------------------
 
 NGDBUILD Design Results Summary:
-  Number of errors:     0
-  Number of warnings:   0
+  Number of errors:    11
+  Number of warnings:  11
 
-Total memory usage is 153664 kilobytes
+Total memory usage is 155392 kilobytes
 
-Writing NGD file "mpg.ngd" ...
-Total REAL time to NGDBUILD completion:  7 sec
+Total REAL time to NGDBUILD completion:  6 sec
 Total CPU time to NGDBUILD completion:   5 sec
+
+One or more errors were found during NGDBUILD.  No NGD file will be written.
 
 Writing NGDBUILD log file "mpg.bld"...
