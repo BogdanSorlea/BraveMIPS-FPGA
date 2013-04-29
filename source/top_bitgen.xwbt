@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\Study\DTU\1\02211\BraveMIPS\source\top.ncd
+OUTFILE=D:\Study\DTU\1\02211\BraveMIPS\source\top.bit
+FAMILY=Spartan6
+PART=xc6slx45-3csg324
+WORKINGDIR=D:\Study\DTU\1\02211\BraveMIPS\source
+LICENSE=ISE
+USER_INFO=179104177_0_0_364

@@ -67,7 +67,8 @@ entity mips is
 	
 	port(
 		clk, reset : in std_logic;
-		led : out std_logic
+		sw : in std_logic_vector(1 downto 0);
+		led : out std_logic_vector(7 downto 0)
 	);
 
 end mips;
@@ -301,14 +302,11 @@ architecture Behavioral of mips is
 
 begin
 
-	-- TODO: remove this line at some point (kept here just to have some output)
-	led <= REGFILE(0)(0) or REGFILE(1)(0) or REGFILE(2)(0) or REGFILE(3)(0) or REGFILE(4)(0) or REGFILE(5)(0)
-				or REGFILE(6)(0) or REGFILE(7)(0) or REGFILE(8)(0) or REGFILE(9)(0) or REGFILE(10)(0) 
-				or REGFILE(11)(0) or REGFILE(12)(0) or REGFILE(13)(0) or REGFILE(14)(0) or REGFILE(15)(0)
-				or REGFILE(16)(0) or REGFILE(17)(0) or REGFILE(18)(0) or REGFILE(19)(0) or REGFILE(20)(0)
-				or REGFILE(21)(0) or REGFILE(22)(0) or REGFILE(23)(0) or REGFILE(24)(0) or REGFILE(25)(0)
-				or REGFILE(26)(0) or REGFILE(27)(0) or REGFILE(28)(0) or REGFILE(29)(0) or REGFILE(30)(0)
-				or REGFILE(31)(0); 
+	-- TODO: remove this at some point (kept here just to have some output)
+	led <= PC(7 downto 0) when sw = "00" else
+				PC(15 downto 8) when sw = "01" else
+				PC(23 downto 16) when sw = "10" else
+				PC(31 downto 24); 
 
 	---------- INSTRUCTION FETCH ----------
 	PC_in <= EXMEM.ALUresult when 

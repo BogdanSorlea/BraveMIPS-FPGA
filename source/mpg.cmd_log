@@ -1,0 +1,9 @@
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/BraveMIPS/source/mpg.xst" -ofn "D:/Study/DTU/1/02211/BraveMIPS/source/mpg.syr" 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/BraveMIPS/source/mpg.xst" -ofn "D:/Study/DTU/1/02211/BraveMIPS/source/mpg.syr" 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/BraveMIPS/source/mpg.xst" -ofn "D:/Study/DTU/1/02211/BraveMIPS/source/mpg.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc atlys.ucf -p xc6slx45-csg324-3 mpg.ngc mpg.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc atlys.ucf -p xc6slx45-csg324-3 mpg.ngc mpg.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o mpg_map.ncd mpg.ngd mpg.pcf 
+par -w -intstyle ise -ol high -mt off mpg_map.ncd mpg.ncd mpg.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml mpg.twx mpg.ncd -o mpg.twr mpg.pcf -ucf atlys.ucf 
+bitgen -intstyle ise -f mpg.ut mpg.ncd 
