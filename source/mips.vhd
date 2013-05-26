@@ -67,7 +67,7 @@ entity mips is
 	
 	port(
 		clk, reset : in std_logic;
-		sw : in std_logic_vector(1 downto 0);
+		sw : in std_logic_vector(7 downto 0);
 		led : out std_logic_vector(7 downto 0)
 	);
 
@@ -299,14 +299,34 @@ architecture Behavioral of mips is
 	constant zeroArray : std_logic_vector(DATAPATH - 1 downto 0) := (others => '0');
 	
 	---------------------------------------
+	
+	signal led_instruction, led_regdata, led_pc : std_logic_vector(7 downto 0);
+	signal led_regfile : std_logic_vector(31 downto 0);
 
 begin
 
 	-- TODO: remove this at some point (kept here just to have some output)
-	led <= IFID.instruction(7 downto 0) when sw = "00" else
-				IFID.instruction(15 downto 8) when sw = "01" else
-				IFID.instruction(23 downto 16) when sw = "10" else
-				IFID.instruction(31 downto 24); 
+	
+	led_pc <= PC(7 downto 0);
+	led_instruction <= IFID.instruction(7 downto 0) when sw(1 downto 0) = "00" else
+				IFID.instruction(15 downto 8) when sw(1 downto 0) = "01" else
+				IFID.instruction(23 downto 16) when sw(1 downto 0) = "10" else
+				IFID.instruction(31 downto 24);
+	led_regfile <= REGFILE(conv_integer("0" & sw(5 downto 2)));
+	led_regdata <= led_regfile(7 downto 0) when sw(1 downto 0) = "00" else
+				led_regfile(15 downto 8) when sw(1 downto 0) = "01" else
+				led_regfile(23 downto 16) when sw(1 downto 0) = "10" else
+				led_regfile(31 downto 24);
+
+	led <= led_pc when sw(7 downto 6) = "00" else
+				led_regdata when sw(7 downto 6) = "11" else
+				led_instruction; 
+	
+	
+--	led <= IFID.instruction(7 downto 0) when sw = "00" else
+--				IFID.instruction(15 downto 8) when sw = "01" else
+--				IFID.instruction(23 downto 16) when sw = "10" else
+--				IFID.instruction(31 downto 24); 
 
 	---------- INSTRUCTION FETCH ----------
 	PC_in <= EXMEM.ALUresult when 

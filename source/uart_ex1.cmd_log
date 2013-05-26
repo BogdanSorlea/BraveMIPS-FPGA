@@ -1,0 +1,86 @@
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc atlys.ucf -p xc6slx45-csg324-3 uart_ex1.ngc uart_ex1.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o uart_ex1_map.ncd uart_ex1.ngd uart_ex1.pcf 
+par -w -intstyle ise -ol high -mt off uart_ex1_map.ncd uart_ex1.ncd uart_ex1.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml uart_ex1.twx uart_ex1.ncd -o uart_ex1.twr uart_ex1.pcf -ucf atlys.ucf 
+bitgen -intstyle ise -f uart_ex1.ut uart_ex1.ncd 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc atlys.ucf -p xc6slx45-csg324-3 uart_ex1.ngc uart_ex1.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o uart_ex1_map.ncd uart_ex1.ngd uart_ex1.pcf 
+par -w -intstyle ise -ol high -mt off uart_ex1_map.ncd uart_ex1.ncd uart_ex1.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml uart_ex1.twx uart_ex1.ncd -o uart_ex1.twr uart_ex1.pcf -ucf atlys.ucf 
+bitgen -intstyle ise -f uart_ex1.ut uart_ex1.ncd 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc atlys.ucf -p xc6slx45-csg324-3 uart_ex1.ngc uart_ex1.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o uart_ex1_map.ncd uart_ex1.ngd uart_ex1.pcf 
+par -w -intstyle ise -ol high -mt off uart_ex1_map.ncd uart_ex1.ncd uart_ex1.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml uart_ex1.twx uart_ex1.ncd -o uart_ex1.twr uart_ex1.pcf -ucf atlys.ucf 
+bitgen -intstyle ise -f uart_ex1.ut uart_ex1.ncd 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc atlys.ucf -p xc6slx45-csg324-3 uart_ex1.ngc uart_ex1.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o uart_ex1_map.ncd uart_ex1.ngd uart_ex1.pcf 
+par -w -intstyle ise -ol high -mt off uart_ex1_map.ncd uart_ex1.ncd uart_ex1.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml uart_ex1.twx uart_ex1.ncd -o uart_ex1.twr uart_ex1.pcf -ucf atlys.ucf 
+bitgen -intstyle ise -f uart_ex1.ut uart_ex1.ncd 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc atlys.ucf -p xc6slx45-csg324-3 uart_ex1.ngc uart_ex1.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o uart_ex1_map.ncd uart_ex1.ngd uart_ex1.pcf 
+par -w -intstyle ise -ol high -mt off uart_ex1_map.ncd uart_ex1.ncd uart_ex1.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml uart_ex1.twx uart_ex1.ncd -o uart_ex1.twr uart_ex1.pcf -ucf atlys.ucf 
+bitgen -intstyle ise -f uart_ex1.ut uart_ex1.ncd 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc atlys.ucf -p xc6slx45-csg324-3 uart_ex1.ngc uart_ex1.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o uart_ex1_map.ncd uart_ex1.ngd uart_ex1.pcf 
+par -w -intstyle ise -ol high -mt off uart_ex1_map.ncd uart_ex1.ncd uart_ex1.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml uart_ex1.twx uart_ex1.ncd -o uart_ex1.twr uart_ex1.pcf -ucf atlys.ucf 
+bitgen -intstyle ise -f uart_ex1.ut uart_ex1.ncd 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc atlys.ucf -p xc6slx45-csg324-3 uart_ex1.ngc uart_ex1.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o uart_ex1_map.ncd uart_ex1.ngd uart_ex1.pcf 
+par -w -intstyle ise -ol high -mt off uart_ex1_map.ncd uart_ex1.ncd uart_ex1.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml uart_ex1.twx uart_ex1.ncd -o uart_ex1.twr uart_ex1.pcf -ucf atlys.ucf 
+bitgen -intstyle ise -f uart_ex1.ut uart_ex1.ncd 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc atlys.ucf -p xc6slx45-csg324-3 uart_ex1.ngc uart_ex1.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o uart_ex1_map.ncd uart_ex1.ngd uart_ex1.pcf 
+par -w -intstyle ise -ol high -mt off uart_ex1_map.ncd uart_ex1.ncd uart_ex1.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml uart_ex1.twx uart_ex1.ncd -o uart_ex1.twr uart_ex1.pcf -ucf atlys.ucf 
+bitgen -intstyle ise -f uart_ex1.ut uart_ex1.ncd 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc atlys.ucf -p xc6slx45-csg324-3 uart_ex1.ngc uart_ex1.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o uart_ex1_map.ncd uart_ex1.ngd uart_ex1.pcf 
+par -w -intstyle ise -ol high -mt off uart_ex1_map.ncd uart_ex1.ncd uart_ex1.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml uart_ex1.twx uart_ex1.ncd -o uart_ex1.twr uart_ex1.pcf -ucf atlys.ucf 
+bitgen -intstyle ise -f uart_ex1.ut uart_ex1.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc atlys.ucf -p xc6slx45-csg324-3 uart_ex1.ngc uart_ex1.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o uart_ex1_map.ncd uart_ex1.ngd uart_ex1.pcf 
+par -w -intstyle ise -ol high -mt off uart_ex1_map.ncd uart_ex1.ncd uart_ex1.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml uart_ex1.twx uart_ex1.ncd -o uart_ex1.twr uart_ex1.pcf -ucf atlys.ucf 
+bitgen -intstyle ise -f uart_ex1.ut uart_ex1.ncd 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+xst -intstyle ise -ifn "D:/Study/DTU/1/02211/Project/source/uart_ex1.xst" -ofn "D:/Study/DTU/1/02211/Project/source/uart_ex1.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc atlys.ucf -p xc6slx45-csg324-3 uart_ex1.ngc uart_ex1.ngd  
+map -intstyle ise -p xc6slx45-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o uart_ex1_map.ncd uart_ex1.ngd uart_ex1.pcf 
+par -w -intstyle ise -ol high -mt off uart_ex1_map.ncd uart_ex1.ncd uart_ex1.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml uart_ex1.twx uart_ex1.ncd -o uart_ex1.twr uart_ex1.pcf -ucf atlys.ucf 
+bitgen -intstyle ise -f uart_ex1.ut uart_ex1.ncd 

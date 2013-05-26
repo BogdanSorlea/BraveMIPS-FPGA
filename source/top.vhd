@@ -33,7 +33,7 @@ entity top is
 
 	port(
 		clk, reset, btn : in std_logic;
-		sw : in std_logic_vector(1 downto 0);
+		sw : in std_logic_vector(7 downto 0);
 		led : out std_logic_vector(7 downto 0)
 	);
 
@@ -76,7 +76,7 @@ architecture Behavioral of top is
 		
 		port(
 			clk, reset : in std_logic;
-			sw : in std_logic_vector(1 downto 0);
+			sw : in std_logic_vector(7 downto 0);
 			led : out std_logic_vector(7 downto 0)
 		);
 	end component;

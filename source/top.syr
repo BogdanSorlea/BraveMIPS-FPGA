@@ -1,16 +1,16 @@
-Release 14.4 - xst P.49d (nt64)
+Release 14.5 - xst P.58f (nt)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.15 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.22 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.15 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.22 secs
  
 --> Reading design: top.prj
 
@@ -105,13 +105,13 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "D:\Study\DTU\1\02211\BraveMIPS\source\mpg.vhd" into library work
+Parsing VHDL file "D:\Study\DTU\1\02211\Project\source\mpg.vhd" into library work
 Parsing entity <mpg>.
 Parsing architecture <Behavioral> of entity <mpg>.
-Parsing VHDL file "D:\Study\DTU\1\02211\BraveMIPS\source\mips.vhd" into library work
+Parsing VHDL file "D:\Study\DTU\1\02211\Project\source\mips.vhd" into library work
 Parsing entity <mips>.
 Parsing architecture <Behavioral> of entity <mips>.
-Parsing VHDL file "D:\Study\DTU\1\02211\BraveMIPS\source\top.vhd" into library work
+Parsing VHDL file "D:\Study\DTU\1\02211\Project\source\top.vhd" into library work
 Parsing entity <top>.
 Parsing architecture <Behavioral> of entity <top>.
 
@@ -130,13 +130,13 @@ Elaborating entity <mips> (architecture <Behavioral>) with generics from library
 =========================================================================
 
 Synthesizing Unit <top>.
-    Related source file is "D:\Study\DTU\1\02211\BraveMIPS\source\top.vhd".
+    Related source file is "D:\Study\DTU\1\02211\Project\source\top.vhd".
     Summary:
 	no macro.
 Unit <top> synthesized.
 
 Synthesizing Unit <mpg>.
-    Related source file is "D:\Study\DTU\1\02211\BraveMIPS\source\mpg.vhd".
+    Related source file is "D:\Study\DTU\1\02211\Project\source\mpg.vhd".
     Found 1-bit register for signal <q0>.
     Found 1-bit register for signal <q1>.
     Found 1-bit register for signal <q2>.
@@ -148,7 +148,7 @@ Synthesizing Unit <mpg>.
 Unit <mpg> synthesized.
 
 Synthesizing Unit <mips>.
-    Related source file is "D:\Study\DTU\1\02211\BraveMIPS\source\mips.vhd".
+    Related source file is "D:\Study\DTU\1\02211\Project\source\mips.vhd".
         DATAPATH = 32
         INMEM_SIZE = 256
         INMEM_SEL = 8
@@ -205,41 +205,43 @@ Synthesizing Unit <mips>.
     Found 32-bit register for signal <MEMWB_MEMresult>.
     Found 1-bit register for signal <MEMWB_WBSelectALU>.
     Found 1-bit register for signal <MEMWB_REGFILE_WE>.
-    Found 32-bit adder for signal <PC[31]_GND_7_o_add_8_OUT> created at line 329.
-    Found 32-bit adder for signal <operatorSource[31]_operatorTarget[31]_add_247_OUT> created at line 636.
-    Found 5-bit subtractor for signal <GND_7_o_GND_7_o_sub_84_OUT<4:0>> created at line 541.
-    Found 32-bit subtractor for signal <GND_7_o_GND_7_o_sub_246_OUT<31:0>> created at line 634.
-    Found 32-bit subtractor for signal <GND_7_o_GND_7_o_sub_254_OUT<31:0>> created at line 656.
-    Found 256x32-bit Read Only RAM for signal <PC[7]_GND_7_o_wide_mux_9_OUT>
+    Found 32-bit adder for signal <PC[31]_GND_7_o_add_20_OUT> created at line 349.
+    Found 32-bit adder for signal <operatorSource[31]_operatorTarget[31]_add_259_OUT> created at line 656.
+    Found 5-bit subtractor for signal <GND_7_o_GND_7_o_sub_96_OUT<4:0>> created at line 561.
+    Found 32-bit subtractor for signal <GND_7_o_GND_7_o_sub_258_OUT<31:0>> created at line 654.
+    Found 32-bit subtractor for signal <GND_7_o_GND_7_o_sub_266_OUT<31:0>> created at line 676.
     Found 32x32-bit dual-port RAM <Mram_REGFILE> for signal <REGFILE>.
-    Found 32x1-bit Read Only RAM for signal <IFID_instruction[5]_PWR_7_o_Mux_37_o>
-    Found 16x1-bit Read Only RAM for signal <IFID_instruction[5]_GND_7_o_Mux_38_o>
-    Found 32x1-bit Read Only RAM for signal <IFID_instruction[31]_GND_7_o_Mux_42_o>
-    Found 64x5-bit Read Only RAM for signal <_n1909>
-    Found 64x4-bit Read Only RAM for signal <_n1974>
-    Found 32-bit 12-to-1 multiplexer for signal <IDEX_ALUoperation[3]_operatorSource[31]_wide_mux_252_OUT> created at line 632.
-    Found 32-bit 31-to-1 multiplexer for signal <shiftResult> created at line 632.
+    Found 256x32-bit Read Only RAM for signal <PC[7]_GND_7_o_wide_mux_21_OUT>
+    Found 32x1-bit Read Only RAM for signal <IFID_instruction[5]_PWR_7_o_Mux_49_o>
+    Found 16x1-bit Read Only RAM for signal <IFID_instruction[5]_GND_7_o_Mux_50_o>
+    Found 32x1-bit Read Only RAM for signal <IFID_instruction[31]_GND_7_o_Mux_54_o>
+    Found 64x5-bit Read Only RAM for signal <_n1724>
+    Found 64x4-bit Read Only RAM for signal <_n1789>
+    Found 32-bit 12-to-1 multiplexer for signal <IDEX_ALUoperation[3]_operatorSource[31]_wide_mux_264_OUT> created at line 652.
+    Found 32-bit 31-to-1 multiplexer for signal <shiftResult> created at line 652.
+    Found 8-bit 4-to-1 multiplexer for signal <led_instruction> created at line 303.
+    Found 8-bit 4-to-1 multiplexer for signal <led_regdata> created at line 303.
     Found 8-bit 4-to-1 multiplexer for signal <led> created at line 71.
-    Found 5-bit comparator equal for signal <IFID_instruction[25]_MEMWB_destinationRegAddress[4]_equal_18_o> created at line 357
-    Found 5-bit comparator equal for signal <IFID_instruction[20]_MEMWB_destinationRegAddress[4]_equal_23_o> created at line 366
-    Found 32-bit comparator greater for signal <operatorSource[31]_operatorTarget[31]_LessThan_243_o> created at line 622
+    Found 5-bit comparator equal for signal <IFID_instruction[25]_MEMWB_destinationRegAddress[4]_equal_30_o> created at line 377
+    Found 5-bit comparator equal for signal <IFID_instruction[20]_MEMWB_destinationRegAddress[4]_equal_35_o> created at line 386
+    Found 32-bit comparator greater for signal <operatorSource[31]_operatorTarget[31]_LessThan_255_o> created at line 642
     Summary:
-	inferred   9 RAM(s).
+	inferred  10 RAM(s).
 	inferred   5 Adder/Subtractor(s).
 	inferred 388 D-type flip-flop(s).
 	inferred   3 Comparator(s).
-	inferred  97 Multiplexer(s).
+	inferred  93 Multiplexer(s).
 Unit <mips> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 9
+# RAMs                                                 : 10
  16x1-bit single-port Read Only RAM                    : 1
  256x32-bit single-port Read Only RAM                  : 1
  32x1-bit single-port Read Only RAM                    : 2
- 32x32-bit dual-port RAM                               : 2
+ 32x32-bit dual-port RAM                               : 3
  64x32-bit single-port RAM                             : 1
  64x4-bit single-port Read Only RAM                    : 1
  64x5-bit single-port Read Only RAM                    : 1
@@ -257,14 +259,14 @@ Macro Statistics
 # Comparators                                          : 3
  32-bit comparator greater                             : 1
  5-bit comparator equal                                : 2
-# Multiplexers                                         : 97
- 1-bit 2-to-1 multiplexer                              : 32
+# Multiplexers                                         : 93
+ 1-bit 2-to-1 multiplexer                              : 20
  32-bit 12-to-1 multiplexer                            : 1
- 32-bit 2-to-1 multiplexer                             : 60
+ 32-bit 2-to-1 multiplexer                             : 66
  32-bit 31-to-1 multiplexer                            : 1
  4-bit 2-to-1 multiplexer                              : 1
  5-bit 2-to-1 multiplexer                              : 1
- 8-bit 4-to-1 multiplexer                              : 1
+ 8-bit 4-to-1 multiplexer                              : 3
 # Xors                                                 : 1
  32-bit xor2                                           : 1
 
@@ -294,33 +296,7 @@ INFO:Xst:3226 - The RAM <Mram_MEMORY> will be implemented as a BLOCK RAM, absorb
     -----------------------------------------------------------------------
     | optimization       | speed                               |          |
     -----------------------------------------------------------------------
-INFO:Xst:3226 - The RAM <Mram_REGFILE> will be implemented as a BLOCK RAM, absorbing the following register(s): <IDEX_sourceValue>
-    -----------------------------------------------------------------------
-    | ram_type           | Block                               |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 32-word x 32-bit                    |          |
-    |     mode           | read-first                          |          |
-    |     clkA           | connected to signal <clk>           | rise     |
-    |     weA            | connected to signal <MEMWB_REGFILE_WE_0> | high     |
-    |     addrA          | connected to signal <MEMWB_destinationRegAddress> |          |
-    |     diA            | connected to signal <regfileWBValue> |          |
-    -----------------------------------------------------------------------
-    | optimization       | speed                               |          |
-    -----------------------------------------------------------------------
-    | Port B                                                              |
-    |     aspect ratio   | 32-word x 32-bit                    |          |
-    |     mode           | read-first                          |          |
-    |     clkB           | connected to signal <clk>           | rise     |
-    |     enB            | connected to signal <reset>         | high     |
-    |     addrB          | connected to signal <IFID_instruction<25:21>> |          |
-    |     doB            | connected to signal <IDEX_sourceValue> |          |
-    |     dorstB         | connected to internal node          | high     |
-    | reset value        | 00000000000000000000000000000000               |
-    -----------------------------------------------------------------------
-    | optimization       | speed                               |          |
-    -----------------------------------------------------------------------
-INFO:Xst:3226 - The RAM <Mram_REGFILE1> will be implemented as a BLOCK RAM, absorbing the following register(s): <IDEX_targetValue>
+INFO:Xst:3226 - The RAM <Mram_REGFILE1> will be implemented as a BLOCK RAM, absorbing the following register(s): <IDEX_sourceValue>
     -----------------------------------------------------------------------
     | ram_type           | Block                               |          |
     -----------------------------------------------------------------------
@@ -339,6 +315,32 @@ INFO:Xst:3226 - The RAM <Mram_REGFILE1> will be implemented as a BLOCK RAM, abso
     |     mode           | read-first                          |          |
     |     clkB           | connected to signal <clk>           | rise     |
     |     enB            | connected to signal <reset>         | high     |
+    |     addrB          | connected to signal <IFID_instruction<25:21>> |          |
+    |     doB            | connected to signal <IDEX_sourceValue> |          |
+    |     dorstB         | connected to internal node          | high     |
+    | reset value        | 00000000000000000000000000000000               |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3226 - The RAM <Mram_REGFILE2> will be implemented as a BLOCK RAM, absorbing the following register(s): <IDEX_targetValue>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <MEMWB_REGFILE_WE_2> | high     |
+    |     addrA          | connected to signal <MEMWB_destinationRegAddress> |          |
+    |     diA            | connected to signal <regfileWBValue> |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     mode           | read-first                          |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <reset>         | high     |
     |     addrB          | connected to signal <IFID_instruction<20:16>> |          |
     |     doB            | connected to signal <IDEX_targetValue> |          |
     |     dorstB         | connected to internal node          | high     |
@@ -346,7 +348,7 @@ INFO:Xst:3226 - The RAM <Mram_REGFILE1> will be implemented as a BLOCK RAM, abso
     -----------------------------------------------------------------------
     | optimization       | speed                               |          |
     -----------------------------------------------------------------------
-INFO:Xst:3217 - HDL ADVISOR - Register <IFID_instruction> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_PC[7]_GND_7_o_wide_mux_9_OUT> for implementation on block RAM resources if you made this reset synchronous instead.
+INFO:Xst:3217 - HDL ADVISOR - Register <IFID_instruction> currently described with an asynchronous reset, could be combined with distributed RAM <Mram_PC[7]_GND_7_o_wide_mux_21_OUT> for implementation on block RAM resources if you made this reset synchronous instead.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -357,7 +359,23 @@ INFO:Xst:3217 - HDL ADVISOR - Register <IFID_instruction> currently described wi
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n1909> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_REGFILE> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <MEMWB_REGFILE_WE_0> | high     |
+    |     addrA          | connected to signal <MEMWB_destinationRegAddress> |          |
+    |     diA            | connected to signal <regfileWBValue> |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     addrB          | connected to signal <("0",sw<5:2>)> |          |
+    |     doB            | connected to signal <led_regfile>   |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n1724> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -368,7 +386,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n1909> will be implemented on LUTs 
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n1974> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n1789> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -379,7 +397,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n1974> will be implemented on LUTs 
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_IFID_instruction[5]_GND_7_o_Mux_38_o> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_IFID_instruction[5]_GND_7_o_Mux_50_o> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -390,7 +408,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_IFID_instruction[5]_GND_7_o_Mux_38_o
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_IFID_instruction[31]_GND_7_o_Mux_42_o> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_IFID_instruction[31]_GND_7_o_Mux_54_o> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -401,8 +419,8 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_IFID_instruction[31]_GND_7_o_Mux_42_
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_PC[7]_GND_7_o_wide_mux_9_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_IFID_instruction[5]_PWR_7_o_Mux_37_o> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_PC[7]_GND_7_o_wide_mux_21_OUT> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_IFID_instruction[5]_PWR_7_o_Mux_49_o> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -423,11 +441,12 @@ Unit <mpg> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 9
+# RAMs                                                 : 10
  16x1-bit single-port distributed Read Only RAM        : 1
  256x32-bit single-port distributed Read Only RAM      : 1
  32x1-bit single-port distributed Read Only RAM        : 2
  32x32-bit dual-port block RAM                         : 2
+ 32x32-bit dual-port distributed RAM                   : 1
  64x32-bit single-port block RAM                       : 1
  64x4-bit single-port distributed Read Only RAM        : 1
  64x5-bit single-port distributed Read Only RAM        : 1
@@ -441,14 +460,15 @@ Macro Statistics
  Flip-Flops                                            : 279
 # Comparators                                          : 1
  32-bit comparator greater                             : 1
-# Multiplexers                                         : 130
- 1-bit 2-to-1 multiplexer                              : 62
+# Multiplexers                                         : 126
+ 1-bit 2-to-1 multiplexer                              : 50
  1-bit 4-to-1 multiplexer                              : 8
  32-bit 12-to-1 multiplexer                            : 1
- 32-bit 2-to-1 multiplexer                             : 56
+ 32-bit 2-to-1 multiplexer                             : 62
  32-bit 31-to-1 multiplexer                            : 1
  4-bit 2-to-1 multiplexer                              : 1
  5-bit 2-to-1 multiplexer                              : 1
+ 8-bit 4-to-1 multiplexer                              : 2
 # Xors                                                 : 1
  32-bit xor2                                           : 1
 
@@ -465,10 +485,11 @@ Optimizing unit <mips> ...
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 3.
-FlipFlop MIPS_1/IDEX_ALUoperation_0 has been replicated 1 time(s)
+FlipFlop MIPS_1/IDEX_ALUoperation_0 has been replicated 2 time(s)
 FlipFlop MIPS_1/IDEX_ALUoperation_1 has been replicated 1 time(s)
-FlipFlop MIPS_1/IDEX_ALUoperation_2 has been replicated 1 time(s)
+FlipFlop MIPS_1/IDEX_ALUoperation_2 has been replicated 2 time(s)
 FlipFlop MIPS_1/IDEX_ALUoperation_3 has been replicated 1 time(s)
+FlipFlop MIPS_1/IDEX_immediateValue_8 has been replicated 1 time(s)
 FlipFlop MIPS_1/IDEX_isSourcePC has been replicated 1 time(s)
 FlipFlop MIPS_1/IDEX_isTargetImmediate has been replicated 1 time(s)
 
@@ -478,8 +499,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 301
- Flip-Flops                                            : 301
+# Registers                                            : 304
+ Flip-Flops                                            : 304
 
 =========================================================================
 
@@ -502,32 +523,34 @@ Top Level Output File Name         : top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1322
+# BELS                             : 1334
 #      GND                         : 1
 #      INV                         : 3
 #      LUT1                        : 45
 #      LUT2                        : 55
-#      LUT3                        : 109
+#      LUT3                        : 108
 #      LUT4                        : 92
-#      LUT5                        : 189
-#      LUT6                        : 503
+#      LUT5                        : 197
+#      LUT6                        : 510
 #      MUXCY                       : 157
-#      MUXF7                       : 23
+#      MUXF7                       : 21
 #      VCC                         : 1
 #      XORCY                       : 144
-# FlipFlops/Latches                : 301
-#      FD                          : 75
+# FlipFlops/Latches                : 304
+#      FD                          : 77
 #      FDC                         : 96
-#      FDE                         : 129
+#      FDE                         : 130
 #      FDR                         : 1
-# RAMS                             : 3
+# RAMS                             : 10
+#      RAM32M                      : 5
+#      RAM32X1D                    : 2
 #      RAMB16BWER                  : 1
 #      RAMB8BWER                   : 2
 # Clock Buffers                    : 2
 #      BUFG                        : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 12
-#      IBUF                        : 4
+# IO Buffers                       : 18
+#      IBUF                        : 10
 #      OBUF                        : 8
 
 Device utilization summary:
@@ -537,26 +560,28 @@ Selected Device : 6slx45csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             300  out of  54576     0%  
- Number of Slice LUTs:                  996  out of  27288     3%  
-    Number used as Logic:               996  out of  27288     3%  
+ Number of Slice Registers:             303  out of  54576     0%  
+ Number of Slice LUTs:                 1034  out of  27288     3%  
+    Number used as Logic:              1010  out of  27288     3%  
+    Number used as Memory:               24  out of   6408     0%  
+       Number used as RAM:               24
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1121
-   Number with an unused Flip Flop:     821  out of   1121    73%  
-   Number with an unused LUT:           125  out of   1121    11%  
-   Number of fully used LUT-FF pairs:   175  out of   1121    15%  
+ Number of LUT Flip Flop pairs used:   1162
+   Number with an unused Flip Flop:     859  out of   1162    73%  
+   Number with an unused LUT:           128  out of   1162    11%  
+   Number of fully used LUT-FF pairs:   175  out of   1162    15%  
    Number of unique control sets:         6
 
 IO Utilization: 
- Number of IOs:                          13
- Number of bonded IOBs:                  13  out of    218     5%  
+ Number of IOs:                          19
+ Number of bonded IOBs:                  19  out of    218     8%  
     IOB Flip Flops/Latches:               1
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:                2  out of    116     1%  
     Number using Block RAM only:          2
- Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+ Number of BUFG/BUFGCTRL/BUFHCEs:         2  out of     16    12%  
 
 ---------------------------
 Partition Resource Summary:
@@ -576,13 +601,13 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+------------------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)              | Load  |
------------------------------------+------------------------------------+-------+
-clk                                | BUFGP                              | 18    |
-DEB/cnt_15                         | NONE(DEB/q0)                       | 1     |
-step(DEB/step1:O)                  | BUFG(*)(MIPS_1/IFID_instruction_31)| 285   |
------------------------------------+------------------------------------+-------+
+-----------------------------------+-------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)         | Load  |
+-----------------------------------+-------------------------------+-------+
+clk                                | BUFGP                         | 18    |
+DEB/cnt_15                         | NONE(DEB/q0)                  | 1     |
+step(DEB/step1:O)                  | BUFG(*)(MIPS_1/Mram_REGFILE82)| 295   |
+-----------------------------------+-------------------------------+-------+
 (*) This 1 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
@@ -597,9 +622,9 @@ Timing Summary:
 Speed Grade: -3
 
    Minimum period: 7.858ns (Maximum Frequency: 127.261MHz)
-   Minimum input arrival time before clock: 5.672ns
-   Maximum output required time after clock: 5.126ns
-   Maximum combinational path delay: 5.741ns
+   Minimum input arrival time before clock: 5.674ns
+   Maximum output required time after clock: 6.025ns
+   Maximum combinational path delay: 7.401ns
 
 Timing Details:
 ---------------
@@ -646,25 +671,25 @@ Delay:               1.952ns (Levels of Logic = 17)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'step'
   Clock period: 7.858ns (frequency: 127.261MHz)
-  Total number of paths / destination ports: 25471 / 419
+  Total number of paths / destination ports: 25524 / 496
 -------------------------------------------------------------------------
 Delay:               7.858ns (Levels of Logic = 6)
-  Source:            MIPS_1/Mram_REGFILE1 (RAM)
+  Source:            MIPS_1/Mram_REGFILE2 (RAM)
   Destination:       MIPS_1/EXMEM_ALUresult_2 (FF)
   Source Clock:      step rising
   Destination Clock: step rising
 
-  Data Path: MIPS_1/Mram_REGFILE1 to MIPS_1/EXMEM_ALUresult_2
+  Data Path: MIPS_1/Mram_REGFILE2 to MIPS_1/EXMEM_ALUresult_2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     RAMB8BWER:CLKAWRCLK->DOADO6   72   1.850   1.693  MIPS_1/Mram_REGFILE1 (MIPS_1/IDEX_targetValue<6>)
+     RAMB8BWER:CLKAWRCLK->DOADO6   72   1.850   1.693  MIPS_1/Mram_REGFILE2 (MIPS_1/IDEX_targetValue<6>)
      LUT3:I2->O           12   0.205   1.273  MIPS_1/Mmux_operatorTarget291_3 (MIPS_1/Mmux_operatorTarget291_1)
-     LUT6:I0->O            1   0.203   0.000  MIPS_1/GND_7_o_GND_7_o_sub_84_OUT<0>31_G (N208)
-     MUXF7:I1->O           2   0.140   0.617  MIPS_1/GND_7_o_GND_7_o_sub_84_OUT<0>31 (MIPS_1/GND_7_o_GND_7_o_sub_84_OUT<0>_mmx_out11)
-     LUT6:I5->O            1   0.205   0.580  MIPS_1/Mmux_IDEX_ALUoperation[3]_operatorSource[31]_wide_mux_252_OUT467 (MIPS_1/Mmux_IDEX_ALUoperation[3]_operatorSource[31]_wide_mux_252_OUT467)
-     LUT6:I5->O            1   0.205   0.580  MIPS_1/Mmux_IDEX_ALUoperation[3]_operatorSource[31]_wide_mux_252_OUT468 (MIPS_1/Mmux_IDEX_ALUoperation[3]_operatorSource[31]_wide_mux_252_OUT468)
-     LUT6:I5->O            1   0.205   0.000  MIPS_1/Mmux_IDEX_ALUoperation[3]_operatorSource[31]_wide_mux_252_OUT4613 (MIPS_1/IDEX_ALUoperation[3]_operatorSource[31]_wide_mux_252_OUT<2>)
+     LUT6:I0->O            1   0.203   0.000  MIPS_1/GND_7_o_GND_7_o_sub_96_OUT<0>31_G (N208)
+     MUXF7:I1->O           2   0.140   0.617  MIPS_1/GND_7_o_GND_7_o_sub_96_OUT<0>31 (MIPS_1/GND_7_o_GND_7_o_sub_96_OUT<0>_mmx_out11)
+     LUT6:I5->O            1   0.205   0.580  MIPS_1/Mmux_IDEX_ALUoperation[3]_operatorSource[31]_wide_mux_264_OUT467 (MIPS_1/Mmux_IDEX_ALUoperation[3]_operatorSource[31]_wide_mux_264_OUT467)
+     LUT6:I5->O            1   0.205   0.580  MIPS_1/Mmux_IDEX_ALUoperation[3]_operatorSource[31]_wide_mux_264_OUT468 (MIPS_1/Mmux_IDEX_ALUoperation[3]_operatorSource[31]_wide_mux_264_OUT468)
+     LUT6:I5->O            1   0.205   0.000  MIPS_1/Mmux_IDEX_ALUoperation[3]_operatorSource[31]_wide_mux_264_OUT4613 (MIPS_1/IDEX_ALUoperation[3]_operatorSource[31]_wide_mux_264_OUT<2>)
      FDE:D                     0.102          MIPS_1/EXMEM_ALUresult_2
     ----------------------------------------
     Total                      7.858ns (3.115ns logic, 4.743ns route)
@@ -691,9 +716,9 @@ Offset:              1.903ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'step'
-  Total number of paths / destination ports: 235 / 235
+  Total number of paths / destination ports: 251 / 251
 -------------------------------------------------------------------------
-Offset:              5.672ns (Levels of Logic = 2)
+Offset:              5.674ns (Levels of Logic = 2)
   Source:            reset (PAD)
   Destination:       MIPS_1/IFID_instruction_31 (FF)
   Destination Clock: step rising
@@ -702,18 +727,18 @@ Offset:              5.672ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           133   1.222   1.963  reset_IBUF (reset_IBUF)
+     IBUF:I->O           134   1.222   1.966  reset_IBUF (reset_IBUF)
      INV:I->O             96   0.206   1.850  MIPS_1/reset_inv1_INV_0 (MIPS_1/reset_inv)
      FDC:CLR                   0.430          MIPS_1/IDEX_next_seq_PC_0
     ----------------------------------------
-    Total                      5.672ns (1.858ns logic, 3.814ns route)
-                                       (32.8% logic, 67.2% route)
+    Total                      5.674ns (1.858ns logic, 3.816ns route)
+                                       (32.7% logic, 67.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'step'
-  Total number of paths / destination ports: 32 / 8
+  Total number of paths / destination ports: 72 / 8
 -------------------------------------------------------------------------
-Offset:              5.126ns (Levels of Logic = 2)
+Offset:              6.025ns (Levels of Logic = 3)
   Source:            MIPS_1/IFID_instruction_31 (FF)
   Destination:       led<7> (PAD)
   Source Clock:      step rising
@@ -722,31 +747,34 @@ Offset:              5.126ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             15   0.447   1.326  MIPS_1/IFID_instruction_31 (MIPS_1/IFID_instruction_31)
-     LUT6:I1->O            1   0.203   0.579  MIPS_1/mux711 (led_7_OBUF)
+     FDC:C->Q             15   0.447   1.210  MIPS_1/IFID_instruction_31 (MIPS_1/IFID_instruction_31)
+     LUT6:I3->O            1   0.205   0.808  MIPS_1/Mmux_led161 (MIPS_1/Mmux_led16)
+     LUT5:I2->O            1   0.205   0.579  MIPS_1/Mmux_led163 (led_7_OBUF)
      OBUF:I->O                 2.571          led_7_OBUF (led<7>)
     ----------------------------------------
-    Total                      5.126ns (3.221ns logic, 1.905ns route)
-                                       (62.8% logic, 37.2% route)
+    Total                      6.025ns (3.428ns logic, 2.597ns route)
+                                       (56.9% logic, 43.1% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 16 / 8
+  Total number of paths / destination ports: 56 / 8
 -------------------------------------------------------------------------
-Delay:               5.741ns (Levels of Logic = 3)
-  Source:            sw<0> (PAD)
+Delay:               7.401ns (Levels of Logic = 5)
+  Source:            sw<2> (PAD)
   Destination:       led<7> (PAD)
 
-  Data Path: sw<0> to led<7>
+  Data Path: sw<2> to led<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             8   1.222   1.167  sw_0_IBUF (sw_0_IBUF)
-     LUT6:I0->O            1   0.203   0.579  MIPS_1/mux711 (led_7_OBUF)
-     OBUF:I->O                 2.571          led_7_OBUF (led<7>)
+     IBUF:I->O            17   1.222   1.027  sw_2_IBUF (sw_2_IBUF)
+     RAM32X1D:DPRA0->DPO    1   0.205   0.808  MIPS_1/Mram_REGFILE81 (MIPS_1/led_regfile<30>)
+     LUT6:I3->O            1   0.205   0.580  MIPS_1/Mmux_led142 (MIPS_1/Mmux_led141)
+     LUT5:I4->O            1   0.205   0.579  MIPS_1/Mmux_led143 (led_6_OBUF)
+     OBUF:I->O                 2.571          led_6_OBUF (led<6>)
     ----------------------------------------
-    Total                      5.741ns (3.996ns logic, 1.745ns route)
-                                       (69.6% logic, 30.4% route)
+    Total                      7.401ns (4.408ns logic, 2.993ns route)
+                                       (59.6% logic, 40.4% route)
 
 =========================================================================
 
@@ -773,14 +801,14 @@ step           |    7.858|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 31.00 secs
-Total CPU time to Xst completion: 31.00 secs
+Total REAL time to Xst completion: 18.00 secs
+Total CPU time to Xst completion: 18.62 secs
  
 --> 
 
-Total memory usage is 294116 kilobytes
+Total memory usage is 201288 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    2 (   0 filtered)
-Number of infos    :   12 (   0 filtered)
+Number of infos    :   13 (   0 filtered)
 

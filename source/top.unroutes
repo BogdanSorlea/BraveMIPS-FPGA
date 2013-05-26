@@ -1,9 +1,17 @@
-Release 14.4 - par P.49d (nt64)
+Release 14.5 - par P.58f (nt)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-Mon Apr 29 17:50:57 2013
+Sun May 26 09:58:09 2013
 
 All signals are completely routed.
 
+WARNING:ParHelpers:361 - There are 5 loadless signals in this design. This design will cause Bitgen to issue DRC
+   warnings.
+
+   MIPS_1/Mram_REGFILE3_RAMD_D1_O
+   MIPS_1/Mram_REGFILE4_RAMD_D1_O
+   MIPS_1/Mram_REGFILE5_RAMD_D1_O
+   MIPS_1/Mram_REGFILE6_RAMD_D1_O
+   MIPS_1/Mram_REGFILE7_RAMD_D1_O
 
 

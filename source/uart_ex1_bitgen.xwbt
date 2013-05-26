@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\Study\DTU\1\02211\Project\source\uart_ex1.ncd
+OUTFILE=D:\Study\DTU\1\02211\Project\source\uart_ex1.bit
+FAMILY=Spartan6
+PART=xc6slx45-3csg324
+WORKINGDIR=D:\Study\DTU\1\02211\Project\source
+LICENSE=WebPack
+USER_INFO=179104177_0_0_153

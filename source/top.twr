@@ -1,13 +1,13 @@
 --------------------------------------------------------------------------------
-Release 14.4 Trace  (nt64)
+Release 14.5 Trace  (nt)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-E:\Xilinx\14.4\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 3
--n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf -ucf atlys.ucf
+C:\Xilinx\14.5\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 3 -n
+3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf
 
 Design file:              top.ncd
 Physical constraint file: top.pcf
-Device,package,speed:     xc6slx45,csg324,C,-3 (PRODUCTION 1.23 2012-12-04)
+Device,package,speed:     xc6slx45,csg324,C,-3 (PRODUCTION 1.23 2013-03-26)
 Report level:             verbose report
 
 Environment Variable      Effect 
@@ -36,40 +36,88 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    1.741|         |         |         |
+clk            |    1.742|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Pad to Pad
 ---------------+---------------+---------+
 Source Pad     |Destination Pad|  Delay  |
 ---------------+---------------+---------+
-sw<0>          |led<0>         |   13.069|
-sw<0>          |led<1>         |   13.292|
-sw<0>          |led<2>         |   12.358|
-sw<0>          |led<3>         |   13.399|
-sw<0>          |led<4>         |   13.210|
-sw<0>          |led<5>         |   14.721|
-sw<0>          |led<6>         |   14.924|
-sw<0>          |led<7>         |   14.742|
-sw<1>          |led<0>         |   13.445|
-sw<1>          |led<1>         |   13.849|
-sw<1>          |led<2>         |   13.375|
-sw<1>          |led<3>         |   13.292|
-sw<1>          |led<4>         |   13.779|
-sw<1>          |led<5>         |   15.157|
-sw<1>          |led<6>         |   14.948|
-sw<1>          |led<7>         |   15.644|
+sw<0>          |led<0>         |    8.461|
+sw<0>          |led<1>         |    8.031|
+sw<0>          |led<2>         |    8.152|
+sw<0>          |led<3>         |    7.798|
+sw<0>          |led<4>         |    8.179|
+sw<0>          |led<5>         |    8.585|
+sw<0>          |led<6>         |    8.150|
+sw<0>          |led<7>         |    8.922|
+sw<1>          |led<0>         |    8.205|
+sw<1>          |led<1>         |    8.009|
+sw<1>          |led<2>         |    7.765|
+sw<1>          |led<3>         |    7.592|
+sw<1>          |led<4>         |    8.069|
+sw<1>          |led<5>         |    7.973|
+sw<1>          |led<6>         |    8.187|
+sw<1>          |led<7>         |    8.755|
+sw<2>          |led<0>         |    9.543|
+sw<2>          |led<1>         |    9.019|
+sw<2>          |led<2>         |    9.097|
+sw<2>          |led<3>         |    8.939|
+sw<2>          |led<4>         |    9.009|
+sw<2>          |led<5>         |    8.835|
+sw<2>          |led<6>         |    9.564|
+sw<2>          |led<7>         |    9.880|
+sw<3>          |led<0>         |    9.417|
+sw<3>          |led<1>         |    8.828|
+sw<3>          |led<2>         |    8.639|
+sw<3>          |led<3>         |    8.881|
+sw<3>          |led<4>         |    8.715|
+sw<3>          |led<5>         |    8.882|
+sw<3>          |led<6>         |    9.063|
+sw<3>          |led<7>         |    9.206|
+sw<4>          |led<0>         |    9.512|
+sw<4>          |led<1>         |    8.818|
+sw<4>          |led<2>         |    8.853|
+sw<4>          |led<3>         |    8.814|
+sw<4>          |led<4>         |    8.933|
+sw<4>          |led<5>         |    8.731|
+sw<4>          |led<6>         |    9.293|
+sw<4>          |led<7>         |    9.609|
+sw<5>          |led<0>         |    9.408|
+sw<5>          |led<1>         |    8.919|
+sw<5>          |led<2>         |    8.515|
+sw<5>          |led<3>         |    8.753|
+sw<5>          |led<4>         |    8.652|
+sw<5>          |led<5>         |    8.636|
+sw<5>          |led<6>         |    9.284|
+sw<5>          |led<7>         |    9.600|
+sw<6>          |led<0>         |    7.158|
+sw<6>          |led<1>         |    6.678|
+sw<6>          |led<2>         |    6.484|
+sw<6>          |led<3>         |    6.889|
+sw<6>          |led<4>         |    7.143|
+sw<6>          |led<5>         |    7.046|
+sw<6>          |led<6>         |    7.408|
+sw<6>          |led<7>         |    7.326|
+sw<7>          |led<0>         |    7.147|
+sw<7>          |led<1>         |    7.047|
+sw<7>          |led<2>         |    6.641|
+sw<7>          |led<3>         |    6.838|
+sw<7>          |led<4>         |    7.096|
+sw<7>          |led<5>         |    7.045|
+sw<7>          |led<6>         |    6.945|
+sw<7>          |led<7>         |    7.336|
 ---------------+---------------+---------+
 
 
-Analysis completed Mon Apr 29 17:51:11 2013 
+Analysis completed Sun May 26 09:58:17 2013 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 275 MB
+Peak Memory Usage: 195 MB
 
 
 

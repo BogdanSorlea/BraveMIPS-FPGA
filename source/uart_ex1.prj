@@ -1,0 +1,4 @@
+vhdl work "fifo.vhd"
+vhdl work "uart_transmitter.vhd"
+vhdl work "sc_uart.vhd"
+vhdl work "uart_ex1.vhd"

@@ -1,0 +1,8 @@
+Release 14.5 Drc P.58f (nt)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Sun May 26 08:53:08 2013
+
+drc -z uart_ex1.ncd uart_ex1.pcf
+
+DRC detected 0 errors and 0 warnings.
